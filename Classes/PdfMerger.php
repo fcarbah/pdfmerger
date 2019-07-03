@@ -67,8 +67,8 @@ class PdfMerger {
      * @param string $orientation
      * @return mixed string | boolean
      */
-    public function merge($outputFormat= OutputFormat::STRING,$outputFilePath='',Orientation $orientation= Orientation::POTRAIT){
-        
+    public function merge($outputFormat= OutputFormat::STRING,$outputFilePath='',$orientation= Orientation::POTRAIT){
+
         if(empty($this->files)){
             $this->errors[] = 'No files to merge';
             return '';
