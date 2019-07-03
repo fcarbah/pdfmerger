@@ -1,0 +1,20 @@
+{
+    "name": "fcarbah/pdfmerger",
+    "description": "PDF File Merger for PHP5",
+    "type":"library",
+    "license": "MIT",
+    "require": {
+        "setasign/fpdi-fpdf": "^2.2"
+    },
+    "authors": [
+        {
+            "name": "Francis Carbah",
+            "email": "fcarbah@live.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Classes\\": "Classes/"
+        }
+    }
+}
