@@ -6,7 +6,7 @@
  * and open the template in the editor.
  */
 
-namespace Classes;
+namespace Fcarbah\Classes;
 use setasign\Fpdi\Fpdi;
 /**
  * Description of PdfMerger

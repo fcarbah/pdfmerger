@@ -6,7 +6,7 @@
  * and open the template in the editor.
  */
 
-namespace Classes;
+namespace Fcarbah\Classes;
 
 /**
  * Description of Orientation

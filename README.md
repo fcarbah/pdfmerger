@@ -13,9 +13,9 @@ or
 ### Example Usage
 ```php
 
-use Classes\PdfMerger;
-use Classes\Orientation;
-use Classes\OutputFormat;
+use Fcarbah\Classes\PdfMerger;
+use Fcarbah\Classes\Orientation;
+use Fcarbah\Classes\OutputFormat;
 
 $pdf = new PdfMerger();
 
