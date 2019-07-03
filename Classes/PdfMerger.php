@@ -35,9 +35,9 @@ class PdfMerger {
      * 
      * @param string $filePath
      * @param string $pages
-     * @param \Fcarbah\Classes\Orientation $orientation
+     * @param string $orientation
      */
-    public function addPdf($filePath,$pages= 'all',Orientation $orientation= Orientation::POTRAIT){
+    public function addPdf($filePath,$pages= 'all',$orientation= Orientation::POTRAIT){
         
         if(file_exists($filePath)){
         
@@ -62,12 +62,12 @@ class PdfMerger {
     
     /**
      * 
-     * @param \Fcarbah\Classes\OutputFormat $outputFormat
+     * @param string $outputFormat
      * @param string $outputFilePath fullpath to outpput file
-     * @param \Fcarbah\Classes\Orientation $orientation
+     * @param string $orientation
      * @return mixed string | boolean
      */
-    public function merge(OutputFormat $outputFormat= OutputFormat::STRING,$outputFilePath='',Orientation $orientation= Orientation::POTRAIT){
+    public function merge($outputFormat= OutputFormat::STRING,$outputFilePath='',Orientation $orientation= Orientation::POTRAIT){
         
         if(empty($this->files)){
             $this->errors[] = 'No files to merge';
@@ -94,11 +94,11 @@ class PdfMerger {
     
     /**
      * 
-     * @param \Fcarbah\Classes\OutputFormat $outputFormat
+     * @param string $outputFormat
      * @param type $outputFilePath
      * @return mixed string | boolean
      */
-    protected function getOutput(OutputFormat $outputFormat,$outputFilePath){
+    protected function getOutput($outputFormat,$outputFilePath){
         
         if ($outputFormat == OutputFormat::STRING) {
             return $this->fpdi->Output($outputFormat);
@@ -206,10 +206,10 @@ class PdfMerger {
      * 
      * @param array $pages
      * @param string $filename
-     * @param \Fcarbah\Classes\Orientation $orientation $orientation
+     * @param string $orientation $orientation
      * @throws Exception
      */
-    protected function importPages(array $pages,$filename, Orientation $orientation){
+    protected function importPages(array $pages,$filename, $orientation){
         
         foreach ($pages as $page) {
             if (!$template = $this->fpdi->importPage($page)) {
