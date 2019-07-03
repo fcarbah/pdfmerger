@@ -35,7 +35,7 @@ class PdfMerger {
      * 
      * @param string $filePath
      * @param string $pages
-     * @param \Classes\Orientation $orientation
+     * @param \Fcarbah\Classes\Orientation $orientation
      */
     public function addPdf($filePath,$pages= 'all',Orientation $orientation= Orientation::POTRAIT){
         
@@ -62,9 +62,9 @@ class PdfMerger {
     
     /**
      * 
-     * @param \Classes\OutputFormat $outputFormat
+     * @param \Fcarbah\Classes\OutputFormat $outputFormat
      * @param string $outputFilePath fullpath to outpput file
-     * @param \Classes\Orientation $orientation
+     * @param \Fcarbah\Classes\Orientation $orientation
      * @return mixed string | boolean
      */
     public function merge(OutputFormat $outputFormat= OutputFormat::STRING,$outputFilePath='',Orientation $orientation= Orientation::POTRAIT){
@@ -94,7 +94,7 @@ class PdfMerger {
     
     /**
      * 
-     * @param \Classes\OutputFormat $outputFormat
+     * @param \Fcarbah\Classes\OutputFormat $outputFormat
      * @param type $outputFilePath
      * @return mixed string | boolean
      */
@@ -206,7 +206,7 @@ class PdfMerger {
      * 
      * @param array $pages
      * @param string $filename
-     * @param \Classes\Orientation $orientation $orientation
+     * @param \Fcarbah\Classes\Orientation $orientation $orientation
      * @throws Exception
      */
     protected function importPages(array $pages,$filename, Orientation $orientation){
