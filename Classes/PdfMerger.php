@@ -63,7 +63,7 @@ class PdfMerger {
     /**
      * 
      * @param string $outputFormat
-     * @param string $outputFilePath fullpath to outpput file
+     * @param string $outputFilePath absolute path to output file
      * @param string $orientation
      * @return mixed string | boolean
      */
@@ -71,17 +71,23 @@ class PdfMerger {
 
         if(empty($this->files)){
             $this->errors[] = 'No files to merge';
-            return '';
+            
+            if($outputFormat == OutputFormat::STRING){
+                return '';
+            }
+            else{
+                return false;
+            }
         }
         
         if(!in_array($outputFormat, OutputFormat::allowable())){
-            $this->errors[] = 'Invalid output format specified. Defaulting to default String';
+            $this->errors[] = 'Invalid output format specified. Defaulting output to String';
             $outputFormat = OutputFormat::STRING;
         }
         
         if(!in_array($orientation, Orientation::allowable())){
-            $this->errors[] = 'Invalid orientation specified. Defaulting to default Potrait';
-            $orientation = OutputFormat::STRING;
+            $this->errors[] = 'Invalid orientation specified. Defaulting orientation to Potrait mode';
+            $orientation = Orientation::POTRAIT;
         }
         
         foreach($this->files as $file){
