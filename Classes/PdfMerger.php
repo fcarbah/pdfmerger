@@ -182,7 +182,7 @@ class PdfMerger {
         
         $filePath = $file['path'];
         
-        $fileorientation = $filePath['orientation'];
+        $fileorientation = $file['orientation'];
 
         if(!in_array($fileorientation, Orientation::allowable())){
             $this->errors[] = 'Invalid orientation specified for file'.$filePath.'. Defaulting to default Potrait';
