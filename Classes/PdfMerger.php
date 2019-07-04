@@ -132,7 +132,7 @@ class PdfMerger {
         
         foreach($tempPages as $page){
             
-            if(stripos($page,'-') === false){
+            if(stripos($page,'-') != false){
                 $actualPages = array_merge($actualPages,$this->getPageRange($page));
             }
             else{
